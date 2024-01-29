@@ -1,20 +1,20 @@
 package naveen.javabaics;
 
-import static org.junit.Assert.assertTrue;
+import org.testng.annotations.Test;
 
-import org.junit.Test;
-
-/**
- * Unit test for simple App.
- */
 public class AppTest 
 {
-    /**
-     * Rigorous Test :-)
-     */
-    @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
-    }
+	@Test
+	public void swap() {
+		int a = 10;
+		int b = 20;
+		
+		int temp = a;
+		a = b; 
+		b = temp;
+		
+		System.out.println(a + " " + b);
+	}
+	
+	
 }
