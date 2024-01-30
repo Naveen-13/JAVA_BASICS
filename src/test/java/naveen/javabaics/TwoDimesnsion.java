@@ -23,6 +23,7 @@ public class TwoDimesnsion {
 			}
 			System.out.println();
 		}
+		sc.close();
 
 	}
 
