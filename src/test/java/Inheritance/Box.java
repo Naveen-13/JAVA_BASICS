@@ -6,7 +6,7 @@ class Box {
     double w;
 //    double weight;
 
-    static void greeting() {
+    public void greeting() {
         System.out.println("Hey, I am in Box class. Greetings!");
     }
 
