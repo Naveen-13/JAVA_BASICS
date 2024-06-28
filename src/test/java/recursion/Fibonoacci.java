@@ -3,7 +3,7 @@ package recursion;
 public class Fibonoacci {
 
 	public static void main(String[] args) {
-		int ans = fibo(50);
+		int ans = fibo(10);
 		System.out.println(ans);
 
 	}
@@ -15,5 +15,7 @@ public class Fibonoacci {
 		}
 		return fibo(n-1) + fibo(n-2);
 	}
+
+	
 
 }
