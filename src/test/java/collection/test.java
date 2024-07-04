@@ -2,6 +2,7 @@ package collection;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,15 +10,39 @@ public class test {
     public static void main(String[] args) {
         String a = "Hello";
         int[] arr = { 13, 14, 1, 4, 5, 6, 7 };
-        test.getCharacters(a);
-        test.swapNum(12345);
-        test.palindrome(1213);
-        test.palindromeString("nitin");
-        test.secondLargest(arr);
-        test.vowel("Hello world");
-        test.abced("abcd");
-        System.out.println(test.incrementeachdigit(4567));
-        System.out.println(test.increment(4532));
+        // test.getCharacters(a);
+        // test.swapNum(12345);
+        // test.palindrome(1213);
+        // test.palindromeString("nitin");
+        // test.secondLargest(arr);
+        // test.vowel("Hello world");
+        // test.abced("abcd");
+        // System.out.println(test.incrementeachdigit(4567));
+        // System.out.println(test.increment(4532));
+        test.evenWords("sky is blue and vast");
+        System.out.println(Arrays.toString(test.method(arr, 5)));
+    }
+    public static int[] method(int[] nums, int target){
+
+        for(int i=0; i<nums.length-1; i++){
+            for(int j=i+1; j<nums.length;j++){
+                if(nums[i]+nums[j]==target){
+                    return new int[]{i,j};
+            }
+        }
+    } return null;
+        
+    }
+
+    public static void evenWords(String str){
+        String[] arrs = str.split(" ");
+        ArrayList<String> result =  new ArrayList<>();
+        for(String arr : arrs){
+            if(arr.length()%2==0){
+                result.add(arr);
+            }
+        }
+        System.out.println(result);
     }
 
     public static void getCharacters(String a) {
