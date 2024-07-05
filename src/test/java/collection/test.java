@@ -4,12 +4,13 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
 
 public class test {
     public static void main(String[] args) {
         String a = "Hello";
-        int[] arr = { 13, 14, 1, 4, 5, 6, 7 };
+        int[] arr = {0,0,1,1,1,2,2,3,3,4};
         // test.getCharacters(a);
         // test.swapNum(12345);
         // test.palindrome(1213);
@@ -19,8 +20,17 @@ public class test {
         // test.abced("abcd");
         // System.out.println(test.incrementeachdigit(4567));
         // System.out.println(test.increment(4532));
-        test.evenWords("sky is blue and vast");
-        System.out.println(Arrays.toString(test.method(arr, 5)));
+        // test.evenWords("sky is blue and vast");
+        // System.out.println(Arrays.toString(test.method(arr, 5)));
+        System.out.println(test.removeDuplicates(arr));
+    }
+    public static int removeDuplicates(int[] nums){
+        LinkedHashSet<Integer> ls = new LinkedHashSet<>();
+        for(int num:nums){
+            ls.add(num);
+        }
+        System.out.println(ls);
+        return ls.size();
     }
     public static int[] method(int[] nums, int target){
 
