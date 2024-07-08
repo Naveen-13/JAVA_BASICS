@@ -10,7 +10,7 @@ import java.util.Map;
 public class test {
     public static void main(String[] args) {
         String a = "Hello";
-        int[] arr = {0,0,1,1,1,2,2,3,3,4};
+        int[] arr = {3,2,6,5,0,3};
         // test.getCharacters(a);
         // test.swapNum(12345);
         // test.palindrome(1213);
@@ -22,8 +22,34 @@ public class test {
         // System.out.println(test.increment(4532));
         // test.evenWords("sky is blue and vast");
         // System.out.println(Arrays.toString(test.method(arr, 5)));
-        System.out.println(test.removeDuplicates(arr));
+        //System.out.println(test.removeDuplicates(arr));
+        System.out.println(test.maxProfit(arr));
     }
+    public static int maxProfit(int[] prices){
+        int maxProfit = 0;
+        int buyPrice = Integer.MAX_VALUE;
+        int index =0;
+        for(int i=0; i<prices.length-1; i++){
+            if(prices[i] < buyPrice){
+                buyPrice = prices[i];
+                index =i;
+            }
+        }
+        for(int i=index+1;i<=prices.length-1; i++){
+            int sellingprice = 0;
+            if(prices[i]>buyPrice && prices[i] > sellingprice){
+                sellingprice = prices[i];
+                maxProfit = prices[i] - buyPrice;
+            }
+            
+        }
+        if(maxProfit <=0){
+            return 0;
+        }
+        return maxProfit;
+        
+    }
+
     public static int removeDuplicates(int[] nums){
         LinkedHashSet<Integer> ls = new LinkedHashSet<>();
         for(int num:nums){
