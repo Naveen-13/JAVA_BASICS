@@ -1,7 +1,11 @@
 package Sorting;
 
 import java.util.Arrays;
-
+// Selection sort is select an element and put it on the correct index
+// so get the index which has max value
+// run a loop and swap the max index value to lastindex value
+// also on each iteration the lastindex value need to decreased as on first iteration the largest number will be at end
+// so reduce lastindex = arr.length-1-i;
 public class selectionSort {
     public static void main(String[] args){
         int[] given = {3,4,1,2,5};
@@ -30,3 +34,4 @@ public class selectionSort {
         arr[second] = temp;
     }
 }
+

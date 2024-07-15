@@ -1,8 +1,6 @@
 package collection;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
@@ -25,29 +23,23 @@ public class test {
         //System.out.println(test.removeDuplicates(arr));
         System.out.println(test.maxProfit(arr));
     }
+    // public static int[] productExceptSelf(int[] nums){}
+    //     t
+    // }
     public static int maxProfit(int[] prices){
-        int maxProfit = 0;
-        int buyPrice = Integer.MAX_VALUE;
-        int index =0;
-        for(int i=0; i<prices.length-1; i++){
-            if(prices[i] < buyPrice){
-                buyPrice = prices[i];
-                index =i;
+        int lsp = Integer.MAX_VALUE;
+        int pist = 0;
+        int op = 0;
+        for(int i=0; i<prices.length; i++){
+            if(prices[i] < lsp){
+                lsp = prices[i];
+            }
+            pist = prices[i] - lsp;
+            if( op < pist){
+                op = pist;
             }
         }
-        for(int i=index+1;i<=prices.length-1; i++){
-            int sellingprice = 0;
-            if(prices[i]>buyPrice && prices[i] > sellingprice){
-                sellingprice = prices[i];
-                maxProfit = prices[i] - buyPrice;
-            }
-            
-        }
-        if(maxProfit <=0){
-            return 0;
-        }
-        return maxProfit;
-        
+        return op;
     }
 
     public static int removeDuplicates(int[] nums){
